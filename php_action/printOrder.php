@@ -55,7 +55,7 @@ $orderItemResult = $connect->query($orderItemSql);
                      <td colspan="3" style=" text-align: right;">Tel: +254 783 043 031 | +254 747 452 145.</td>
                   </tr>
                   <tr>
-                     <td colspan="3" style=" text-align: right;">Email: info@woostem.co.ke</td>
+                     <td colspan="3" style=" text-align: right;">Email: info@Realtech.co.ke</td>
                   </tr>
                   <tr>
                      <td colspan="3" style=" text-align: right;color: blue;text-decoration: underline;">devlewis67@gmail.com</td>
@@ -161,7 +161,7 @@ $orderItemResult = $connect->query($orderItemSql);
                      </td>
                   </tr>
                   <tr>
-                     <td colspan="3" style="border-bottom: 1px solid black;border-left: 1px solid black;padding: 5px;">AC. HO. Name:- Woostem Inc.</td>
+                     <td colspan="3" style="border-bottom: 1px solid black;border-left: 1px solid black;padding: 5px;">AC. HO. Name:- Realtech Inc.</td>
                   </tr>
                   <tr>
                      <td colspan="3" style="border-bottom: 1px solid black;border-left: 1px solid black;padding: 5px;">AC.NO. :- 4845-2145</td>
@@ -174,8 +174,8 @@ $orderItemResult = $connect->query($orderItemSql);
                      <td style="border-bottom: 1px solid black;border-right: 1px solid;">'.$total.'</td>
                   </tr>
                   <tr>
-                     <td colspan="3" style="border-left: 1px solid black;border-bottom: 1px solid black;padding: 5px;border-right: 1px solid black;">* Subject to woostem org.             <span style="float: right;"> E.&amp;.O.E.</span></td>
-                     <td rowspan="2" colspan="2" style="vertical-align: bottom;padding: 5px;color: red;border-right: 1px solid black;text-align: center;"> Woostem Inc.</td>
+                     <td colspan="3" style="border-left: 1px solid black;border-bottom: 1px solid black;padding: 5px;border-right: 1px solid black;">* Subject to Realtech org.             <span style="float: right;"> E.&amp;.O.E.</span></td>
+                     <td rowspan="2" colspan="2" style="vertical-align: bottom;padding: 5px;color: red;border-right: 1px solid black;text-align: center;"> Realtech Inc.</td>
                   </tr>
                   <tr>
                      <td colspan="3" style="border-left: 1px solid black;padding-left: 5px;border-right: 1px solid black;">

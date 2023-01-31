@@ -1,10 +1,10 @@
-<?php 	
-
-$localhost = "localhost";
+<?php
+$localhost = "127.0.0.1";
 $username = "root";
-$password = "777";
-$dbname = "woostem";
-$store_url = "http://127.0.0.1/WoostemInven/";
+$password = "Kikis_216";
+$dbname = "SOP-POS";
+
+$store_url = "http://127.0.0.1/stock_system/";
 // db connection
 $connect = new mysqli($localhost, $username, $password, $dbname);
 // check connection

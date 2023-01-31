@@ -4,7 +4,7 @@
 <html>
 <head>
 
-	<title>Stock Control Management System - Woostem</title>
+	<title>Stock Control Management System - Realtech</title>
 
 	<!-- bootstrap -->
 	<link rel="stylesheet" href="assests/bootstrap/css/bootstrap.min.css">

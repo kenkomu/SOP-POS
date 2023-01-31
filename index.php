@@ -1,61 +1,62 @@
-<?php 
+<?php
+
 require_once 'php_action/db_connect.php';
 
 session_start();
 
-if(isset($_SESSION['userId'])) {
-	header('location:'.$store_url.'dashboard.php');		
+if(isset($_SESSION['userId'])){
+    header('location: http://localhost/stock_system/dashboard.php');
 }
-
 $errors = array();
+$username = $password = '';
+if($_POST) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
-if($_POST) {		
+    if(empty($username) || empty($password)) {
+        if($username == "") {
+            $errors['username'] = "Username is required";
+        }
+        
+        if($password == ""){
+            $errors['password'] = "Password is required";
+        }
 
-	$username = $_POST['username'];
-	$password = $_POST['password'];
+    } else {
+        $sql = "SELECT * FROM users WHERE username = '$username'";
+        $result = $connect->query($sql);
 
-	if(empty($username) || empty($password)) {
-		if($username == "") {
-			$errors[] = "Username is required.";
-		} 
+        if($result->num_rows == 1) {
+            // $password = $password;
+            //exists
+            $mainSql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
+            $mainResult = $connect->query($mainSql);
 
-		if($password == "") {
-			$errors[] = "Password is required.";
-		}
-	} else {
-		$sql = "SELECT * FROM users WHERE username = '$username'";
-		$result = $connect->query($sql);
+            if($mainResult->num_rows == 1) {
+                $value = $mainResult->fetch_assoc();
+                print_r($value);
+                $user_id = $value['user_id'];
 
-		if($result->num_rows == 1) {
-			$password = md5($password);
-			// exists
-			$mainSql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
-			$mainResult = $connect->query($mainSql);
+                //set session
+                $_SESSION['userId'] = $user_id;
 
-			if($mainResult->num_rows == 1) {
-				$value = $mainResult->fetch_assoc();
-				$user_id = $value['user_id'];
+                header('location:dashboard.php');
 
-				// set session
-				$_SESSION['userId'] = $user_id;
-
-				header('location:'.$store_url.'dashboard.php');	
-			} else{
-				
-				$errors[] = "Incorrect username or password!";
-			} // /else
-		} else {		
-			$errors[] = "Username does not exist!";		
-		} // /else
-	} // /else not empty username // password
-	
-} // /if $_POST
+            } else {
+                $errors['username'] = "Incorrect username/password combination";
+            }
+            
+        } else{
+            $errors['password'] = "Username does not exists";
+        }
+    }
+}
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Woostem | Amazing Stock Control Management System</title>
+	<title>Realtech | Amazing Stock Control Management System</title>
 
 	<!-- bootstrap -->
 	<link rel="stylesheet" href="assests/bootstrap/css/bootstrap.min.css">
@@ -91,7 +92,7 @@ if($_POST) {
 				
      		 }
    	 		</style>
-				<a class="nav"href="http://127.0.0.1/WoostemInven/"><h1>Woostem Inven</h1></a>
+				<a class="nav"href="http://127.0.0.1/stock_system/"><h1>Realtech Inven</h1></a>
 				<style>
 				h1,a{
 					font-family: Nunito, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
