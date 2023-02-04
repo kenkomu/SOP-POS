@@ -1,4 +1,4 @@
 # SOP-POS
 
-Username: root\n
+Username: root
 Password: password
